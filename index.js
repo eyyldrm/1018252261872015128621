@@ -5,5 +5,9 @@ var bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
+app.get('/', function(req, res){
+    res.end("selamlar");
+});
+
 
 app.listen(3000, () => console.log('Port 3000 aktif hale getirildi.')); 
