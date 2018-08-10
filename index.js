@@ -12,10 +12,5 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.get('/', function(req, res){
     res.end("selamlar");
 });
-io.on('connection', function (socket) {
-socket.on("pubgstats", function(data){
-   console.log(data); 
-});
 
-});
 app.listen(port, () => console.log('Port 3000 aktif hale getirildi.')); 
