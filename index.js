@@ -12,6 +12,11 @@ app.get('/', function(req, res){
     res.end("selamlar");
 });
 
-
+io.on('connection', function (socket) {
+    socket.emit('news', { hello: 'world' });
+    socket.on('my other event', function (data) {
+      console.log(data);
+    });
+  });
 
 app.listen(port, () => console.log('Port 3000 aktif hale getirildi.')); 
