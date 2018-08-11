@@ -10,8 +10,7 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
     console.log('a user connected');
   socket.on('pubgName', function(data){
-    var data = JSON.stringify(data);
-    console.log('User PUBG name is ' + data.pubgName);
+    console.log('User PUBG name is ' + data);
   });
 });
 
