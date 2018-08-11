@@ -12,7 +12,7 @@ io.on('connection', function(socket){
   socket.on('pubgName', function(data){
     var pubgStr = JSON.stringify(data);
     var pubgParse = JSON.parse(pubgStr);
-    console.log(pubgParse.foo);
+    console.log(pubgParse.pubgName);
   });
 });
 
