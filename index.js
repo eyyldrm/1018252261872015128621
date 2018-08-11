@@ -11,7 +11,8 @@ io.on('connection', function(socket){
     console.log('a user connected');
   socket.on('pubgName', function(data){
     var pubgStr = JSON.stringify(data);
-    console.log(JSON.parse(pubgStr));
+    var pubgParse = JSON.parse(pubgStr);
+    console.log(pubgParse.foo);
   });
 });
 
