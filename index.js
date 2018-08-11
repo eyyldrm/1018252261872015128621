@@ -10,7 +10,7 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
     console.log('a user connected');
   socket.on('broadcast', function(data){
-    console.log('User message:' + data);
+    console.log('User message:' + JSON.stringify(data));
   });
 });
 
