@@ -22,7 +22,12 @@ io.on('connection', function(socket){
 
       }}, function(error,response,body){
         var enres = JSON.parse(body);
-        console.log(enres);
+        if(enres.errors){
+          console.log("There isn't username in Playerunkown's Battlegrounds");
+        }else{
+          var pubgId = enres.data[0].id;
+          console.log(pubgId);
+        }
       });
     
   });
