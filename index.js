@@ -31,6 +31,9 @@ io.on('connection', function(socket){
       });
     
   });
+  socket.on('deneme', function(data){
+    console.log(JSON.stringify(data));
+  });
 });
 
 http.listen(port, function(){
