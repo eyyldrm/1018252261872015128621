@@ -49,7 +49,7 @@ io.on('connection', function(socket){
         if(enres.errors){
           console.log("There isn't username in Playerunkown's Battlegrounds");
         }else{
-          io.emit('sendPubgStats', {
+          io.emit('sendPubgStats', { 
             pubgAccountId: pubgId,
             userId:  userIdparse,
             soloTppasists: enres.data.attributes.gameModeStats.solo.assists,
