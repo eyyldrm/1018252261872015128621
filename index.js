@@ -26,7 +26,8 @@ io.on('connection', function(socket){
           console.log("There isn't username in Playerunkown's Battlegrounds");
         }else{
           var pubgId = enres.data[0].id;
-          io.emit('pubgAccountId', {pubgAccountId: pubgId});
+          var userIdparse = pubgParse.userId;
+          io.emit('pubgAccountId', {pubgAccountId: pubgId, userId:  userIdparse});
         }
       });
     
