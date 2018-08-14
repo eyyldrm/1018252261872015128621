@@ -46,7 +46,7 @@ io.on('connection', function(socket){
 
       }}, function(error,response,body){
         var senres = JSON.parse(body);
-        console.log(senres.data.attributes.gameModeStats['duo-fpp'].kills);
+
         if(senres.errors){
           console.log("There isn't username in Playerunkown's Battlegrounds");
         }else{
