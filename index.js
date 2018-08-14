@@ -248,7 +248,7 @@ io.on('connection', function(socket){
     var chatParse = JSON.parse(chatstr);
     var chatMassage  = chatParse.chatMassage;
     var username = chatMassage.userName;
-
+    console.log(chatParse);
     io.emit('chatMessageC', {chatMassages: chatMassage, userName: username});
     });
 });
