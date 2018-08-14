@@ -243,6 +243,14 @@ io.on('connection', function(socket){
         }
       });
   });
+    socket.on('pubgStats', function(data){
+    var chatstr = JSON.stringify(data);
+    var chatParse = JSON.parse(chatstr);
+    var chatMassage  = chatParse.chatMassage;
+    var username = chatMassage.userName;
+
+    io.emit('chatMessageC', {chatMassages: chatMassage, userName: username});
+    });
 });
 
 http.listen(port, function(){
