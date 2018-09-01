@@ -39,7 +39,7 @@ io.on('connection', function(socket){
     var userIdparse = pubgParse.userId;
     var pubgurl = 'https://api.pubg.com/shards/';
     var pceu = "pc-eu";
-    request.get(pubgurl + pceu + '/players/' + pubgId + '/seasons/division.bro.official.2018-08', {
+    request.get(pubgurl + pceu + '/players/' + pubgId + '/seasons/division.bro.official.2018-09', {
       headers : {
         'Authorization': 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjNDkxOTJjMC02ZTc2LTAxMzYtNmIyYy01NWU4Y2Y2YWI4YmIiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTMyMTEwNTEyLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImxhcmZzdGF0cyJ9.1GteXaLtMUuOOa3SUrr4OaQIdk2sNoe_TA_Qm_mPBZU',
         'Accept': 'application/vnd.api+json'
