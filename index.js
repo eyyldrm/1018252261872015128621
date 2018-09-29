@@ -44,7 +44,7 @@ io.on('connection', function(socket){
           console.log("There isn't username in Playerunkown's Battlegrounds");
         }else{
           var SeasonsCount = enres.data.length;
-          io.emit('gotPubgServerEu', {server: "pc-eu", seasonsCounts:  SeasonsCount, Seasons: enres});
+          io.emit('gotPubgServerEu', {server: "pc-eu", seasonsCounts:  SeasonsCount, Seasons: body});
         }
       });
     
