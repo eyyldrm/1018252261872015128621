@@ -32,6 +32,25 @@ io.on('connection', function(socket){
       });
     
   });
+  socket.on('getPubgSeasons', function(data){
+    var pubgStr = JSON.stringify(data);
+    var pubgParse = JSON.parse(pubgStr);
+    request.get("https://api.pubg.com/shards/pc-eu/seasons" + pubgParse.pubgName,{
+      headers : {
+        'Authorization': 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjNDkxOTJjMC02ZTc2LTAxMzYtNmIyYy01NWU4Y2Y2YWI4YmIiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTMyMTEwNTEyLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImxhcmZzdGF0cyJ9.1GteXaLtMUuOOa3SUrr4OaQIdk2sNoe_TA_Qm_mPBZU',
+        'Accept': 'application/vnd.api+json'
+
+      }}, function(error,response,body){
+        var enres = JSON.parse(body);
+        if(enres.errors){
+          console.log("There isn't username in Playerunkown's Battlegrounds");
+        }else{
+          var SeasonsCount = enres.data.length;
+          io.emit('gotPubgServerEu', {server: "pc-eu", seasonsCount:  SeasonsCount, Seasons: data});
+        }
+      });
+    
+  });
   socket.on('pubgStats', function(data){
     var pubgStr = JSON.stringify(data);
     var pubgParse = JSON.parse(pubgStr);
