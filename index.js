@@ -73,6 +73,7 @@ io.on('connection', function(socket){
             pubgAccountId: pubgId,
             userId:  userIdparse,
             pubgSeason: pubgEuSeason, 
+            pubgServer: pceu,
             soloTppasists: senres.data.attributes.gameModeStats.solo.assists,
             soloTppboosts: senres.data.attributes.gameModeStats.solo.boosts,
             soloTppdbnos: senres.data.attributes.gameModeStats.solo.dBNOs,
