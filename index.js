@@ -55,6 +55,7 @@ io.on('connection', function(socket){
     var pubgId = pubgParse.pubgAccountId;
     var userIdparse = pubgParse.userId;
     var pubgEuSeason = pubgParse.season;
+    console.log(pubgEuSeason);
     var pubgurl = 'https://api.pubg.com/shards/';
     var pceu = "pc-eu";
     request.get(pubgurl + pceu + '/players/' + pubgId + '/' + pubgEuSeason, {
