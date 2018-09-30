@@ -71,7 +71,7 @@ io.on('connection', function(socket){
           io.emit('sendPubgStats', { 
             pubgAccountId: pubgId,
             userId:  userIdparse,
-            pubgSeason: pubgEuSeason,
+            pubgSeason: pubgEuSeason, 
             soloTppasists: senres.data.attributes.gameModeStats.solo.assists,
             soloTppboosts: senres.data.attributes.gameModeStats.solo.boosts,
             soloTppdbnos: senres.data.attributes.gameModeStats.solo.dBNOs,
